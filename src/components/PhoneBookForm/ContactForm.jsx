@@ -15,6 +15,9 @@ export class ContactForm extends Component {
     const { name, number } = this.state;
     const id = nanoid();
     this.props.onSubmit({ id, name, number });
+    console.log(this.state);
+    this.setState({ name: '', number: '' });
+    console.log(this.state);
   };
   render() {
     return (
@@ -25,6 +28,7 @@ export class ContactForm extends Component {
             <Input
               type="text"
               name="name"
+              value={this.state.name}
               required
               onChange={this.handleChange}
             />
@@ -34,6 +38,7 @@ export class ContactForm extends Component {
             <Input
               type="tel"
               name="number"
+              value={this.state.number}
               required
               onChange={this.handleChange}
             />

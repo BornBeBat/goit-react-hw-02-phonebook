@@ -9,6 +9,5 @@ export const AppContainer = styled.div`
   border: 0.2em solid var(--accent1);
   box-shadow: 0px 0px 18px 5px var(--accent2) inset,
     0px 0px 8px 5px var(--accent1);
-  cursor: pointer;
   margin: 0 auto;
 `;
