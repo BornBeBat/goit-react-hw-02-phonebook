@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ContactForm, ContactList, Filter } from 'components';
+import { MainTitle, SecondaryTitle } from './PhoneBook.styled';
 
 export class PhoneBook extends Component {
   constructor() {
@@ -31,17 +32,17 @@ export class PhoneBook extends Component {
   };
   render() {
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <>
+        <MainTitle>Phonebook</MainTitle>
         <ContactForm onSubmit={this.handleFormSubmit} />
-        <h2>Contacts</h2>
+        <SecondaryTitle>Contacts</SecondaryTitle>
         <Filter onChange={this.updateFilter} />
         <ContactList
           contacts={this.state.contacts}
           filter={this.state.filter}
           onClick={this.hendleDeleteContact}
         />
-      </div>
+      </>
     );
   }
 }

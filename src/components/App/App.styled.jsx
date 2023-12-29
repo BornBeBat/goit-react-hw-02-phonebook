@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
 
 export const AppContainer = styled.div`
-  height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  font-size: 26px;
-  color: #010101;
+  font-size: 1em;
+  padding: 2em;
+  background-color: var(--background);
+  width: 28em;
+  border-radius: 1em;
+  border: 0.2em solid var(--accent1);
+  box-shadow: 0px 0px 18px 5px var(--accent2) inset,
+    0px 0px 8px 5px var(--accent1);
+  cursor: pointer;
+  margin: 0 auto;
 `;

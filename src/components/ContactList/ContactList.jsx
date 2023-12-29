@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ListItem } from './ListItem/ListItem';
+import { List } from './ContactList.styled';
 
 export class ContactList extends Component {
   handleClick = event => {
@@ -7,7 +8,7 @@ export class ContactList extends Component {
   };
   render() {
     return (
-      <ul>
+      <List>
         {this.props.contacts.map(elem => {
           return (
             <ListItem
@@ -18,7 +19,7 @@ export class ContactList extends Component {
             />
           );
         })}
-      </ul>
+      </List>
     );
   }
 }
