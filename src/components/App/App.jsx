@@ -1,4 +1,4 @@
-import { PhoneBook } from 'components/PhoneBook/PhoneBook';
+import { PhoneBook } from 'components';
 import { AppContainer } from './App.styled';
 
 export const App = () => {

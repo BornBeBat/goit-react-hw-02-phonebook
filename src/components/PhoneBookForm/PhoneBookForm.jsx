@@ -8,37 +8,40 @@ export class ContactForm extends Component {
   }
   handleChange = e => {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
-    console.log(this.state);
   };
   handleSubmit = e => {
     e.preventDefault();
     const { name, number } = this.state;
     const id = nanoid();
-    this.props.onSubmit({ name, number, id });
+    this.props.onSubmit({ id, name, number });
+    // this.setState({ name: 'asd', number: 'fff' });
+    // console.log('loh');
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            required
-            onChange={this.handleChange}
-          />
-        </label>
-        <label>
-          Phone
-          <input
-            type="tel"
-            name="number"
-            required
-            onChange={this.handleChange}
-          />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name
+            <input
+              type="text"
+              name="name"
+              required
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            Number
+            <input
+              type="tel"
+              name="number"
+              required
+              onChange={this.handleChange}
+            />
+          </label>
+          <button type="submit">Add contact</button>
+        </form>
+      </>
     );
   }
 }
