@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Forma, Input, Label } from './ContactForm.styled';
 
@@ -17,9 +18,7 @@ export class ContactForm extends Component {
     const { name, number } = this.state;
     const id = nanoid();
     this.props.onSubmit({ id, name, number });
-    console.log(this.state);
     this.setState({ name: '', number: '' });
-    console.log(this.state);
   };
   render() {
     return (
@@ -51,3 +50,7 @@ export class ContactForm extends Component {
     );
   }
 }
+
+ContactForm.propTypes = {
+  onClick: PropTypes.func,
+};
