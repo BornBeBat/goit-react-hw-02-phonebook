@@ -4,10 +4,7 @@ import { nanoid } from 'nanoid';
 import { Forma, Input, Label } from './ContactForm.styled';
 
 export class ContactForm extends Component {
-  constructor() {
-    super();
-    this.state = { name: '', number: '' };
-  }
+  state = { name: '', number: '' };
 
   handleChange = e => {
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });

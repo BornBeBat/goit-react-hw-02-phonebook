@@ -20,12 +20,14 @@ export class App extends Component {
 
   filterContacts = () => {
     return this.state.contacts.filter(elem =>
-      elem.name.includes(this.state.filter)
+      elem.name.toLowerCase().includes(this.state.filter.toLowerCase())
     );
   };
 
   handleFormSubmit = data => {
-    const isExist = this.state.contacts.find(elem => elem.name === data.name);
+    const isExist = this.state.contacts.find(
+      elem => elem.name.toLowerCase() === data.name.toLowerCase()
+    );
     if (isExist) {
       alert(`${data.name} is already in contacts`);
       return;
